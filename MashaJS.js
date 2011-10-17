@@ -1,7 +1,6 @@
 (function(window, $) {
   $(window.document).ready(function() {
-    window.MaSha.instance = new window.MaSha({
-      selectable: 'bodyContent'
+    window.MaSha.instance = $('#bodyContent').masha({
     });
   });
 })(window, window.jQuery);
