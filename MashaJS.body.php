@@ -1,13 +1,7 @@
 <?php
 
 class MashaJS {
-  public static function load( $article ) {
-    global $wgOut;
-    // Internationalization
-    // not used yet
-    // if (function_exists('wfLoadExtensionMessages')) {
-      // wfLoadExtensionMessages('MashaJS');
-    // }
+  public static function load( &$wgOut, &$sk ) {
     $wgOut->addModules('ext.MashaJS');
 
     // Continue

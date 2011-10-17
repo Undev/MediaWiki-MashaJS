@@ -24,7 +24,7 @@ $wgExtensionCredits['other'][] = array(
 );
 
 // Register load hook
-$wgHooks['ArticleViewFooter'][] = 'MashaJS::load';
+$wgHooks['BeforePageDisplay'][] = 'MashaJS::load';
 
 function mashaJScripts() {
   $scripts = array('MaSha/src/js/masha.min.js', 'MashaJS.js');
