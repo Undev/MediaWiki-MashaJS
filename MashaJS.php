@@ -10,7 +10,6 @@ EOT;
 
 $dir = dirname( __FILE__ ) . '/';
 
-$wgMashaJSVersion = '0.1';
 $wgAutoloadClasses['MashaJS'] = $dir. 'MashaJS.body.php';
 $wgExtensionMessagesFiles['MashaJS'] = $dir. 'MashaJS.i18n.php';
 
