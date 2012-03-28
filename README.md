@@ -29,6 +29,8 @@ That's all.
 
 ## Configuration
 
+Since 0.3 release MashaJS disabled by default. It should be enabled as per user preference in "Editing/Advanced Editing" section.
+
 Since 0.2 release MashaJS disabled by default on editing.
 
 You can override this behavior by setting global variable <tt>$wgMashaJSEnableOnEdit</tt> to <tt>true</tt>.
