@@ -22,8 +22,9 @@ $wgExtensionCredits['other'][] = array(
   'descriptionmsg' => 'mashajs-description'
 );
 
-// Register load hook
+// Register hooks
 $wgHooks['BeforePageDisplay'][] = 'MashaJS::load';
+$wgHooks['GetPreferences'][]    = 'MashaJS::get_prefs';
 
 function mashaJScripts() {
   $scripts = array('MaSha/src/js/masha.min.js', 'MashaJS.js');

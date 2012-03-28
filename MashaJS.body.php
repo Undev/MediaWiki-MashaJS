@@ -2,13 +2,34 @@
 
 class MashaJS {
   public static function load( &$wgOut, &$sk ) {
-    global $wgRequest, $wgMashaJSEnableOnEdit;
+    global $wgRequest, $wgUser, $wgMashaJSEnableOnEdit;
 
-    if ($wgMashaJSEnableOnEdit || $wgRequest->getText('action', 'view') !== 'edit') {
+    $enable = 0;
+    if ($wgUser) {
+      $enable = $wgUser->getOption('mashajs-enable');
+    }
+
+    if (($enable == 1) && ($wgMashaJSEnableOnEdit || $wgRequest->getText('action', 'view') !== 'edit')) {
       $wgOut->addModules('ext.MashaJS');
     }
 
     // Continue
     return true;
   }
+
+  public static function get_prefs( $user, &$preferences ) {
+    global $wgDefaultUserOptions;
+    if( !array_key_exists('mashajs-enable', $user->mOptions) && !empty($wgDefaultUserOptions['mashajs-enable'])) {
+      $user->setOption('mashajs-enable', $wgDefaultUserOptions['mashajs-enable']);
+    }
+    $preferences['mashajs-enable'] = array(
+      'type' => 'check',
+      'section' => 'editing/advancedediting', 
+      'label-message' => 'MashaJS',
+    );
+
+    // Continue
+    return true;
+  }
 }
+
