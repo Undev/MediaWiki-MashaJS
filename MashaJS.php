@@ -18,7 +18,7 @@ $wgExtensionCredits['other'][] = array(
   'name' => 'MashaJS',
   'author' => 'Akzhan Abdulin',
   'url' => 'http://www.mediawiki.org/wiki/Extension:MashaJS',
-  'version' => '0.2',
+  'version' => '0.3',
   'descriptionmsg' => 'mashajs-description'
 );
 
