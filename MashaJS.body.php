@@ -25,7 +25,7 @@ class MashaJS {
     $preferences['mashajs-enable'] = array(
       'type'          => 'check',
       'section'       => 'editing/advancedediting',
-      'label-message' => 'MashaJS'
+      'label-message' => 'mashajs-enable'
     );
 
     // Continue
