@@ -17,15 +17,15 @@ class MashaJS {
     return true;
   }
 
-  public static function get_prefs( $user, &$preferences ) {
+  public function get_prefs( $user, &$preferences ) {
     global $wgDefaultUserOptions;
     if( !array_key_exists('mashajs-enable', $user->mOptions) && !empty($wgDefaultUserOptions['mashajs-enable'])) {
       $user->setOption('mashajs-enable', $wgDefaultUserOptions['mashajs-enable']);
     }
     $preferences['mashajs-enable'] = array(
-      'type' => 'check',
-      'section' => 'editing/advancedediting', 
-      'label-message' => 'MashaJS',
+      'type'          => 'check',
+      'section'       => 'editing/advancedediting',
+      'label-message' => 'MashaJS'
     );
 
     // Continue
