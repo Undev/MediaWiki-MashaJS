@@ -17,7 +17,7 @@ class MashaJS {
     return true;
   }
 
-  public function get_prefs( $user, &$preferences ) {
+  public static function get_prefs( $user, &$preferences ) {
     global $wgDefaultUserOptions;
     if( !array_key_exists('mashajs-enable', $user->mOptions) && !empty($wgDefaultUserOptions['mashajs-enable'])) {
       $user->setOption('mashajs-enable', $wgDefaultUserOptions['mashajs-enable']);
