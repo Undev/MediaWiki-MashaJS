@@ -18,13 +18,14 @@ $wgExtensionCredits['other'][] = array(
   'name' => 'MashaJS',
   'author' => 'Akzhan Abdulin',
   'url' => 'http://www.mediawiki.org/wiki/Extension:MashaJS',
-  'version' => '0.3',
+  'version' => '0.4',
   'descriptionmsg' => 'mashajs-description'
 );
 
 // Register hooks
 $wgHooks['BeforePageDisplay'][] = 'MashaJS::load';
 $wgHooks['GetPreferences'][]    = 'MashaJS::get_prefs';
+$wgHooks['OutputPageBeforeHTML'][] = 'MashaJS::addingRevisionId';
 
 function mashaJScripts() {
   $scripts = array('MaSha/src/js/masha.min.js', 'MashaJS.js');
