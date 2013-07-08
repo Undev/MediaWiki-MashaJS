@@ -38,11 +38,16 @@ class MashaJS
     public static function addingRevisionId(OutputPage &$out, &$text)
     {
         try {
-            $oldid = $out->getContext()->getWikiPage()->getRevision()->getId();
-            $html = '<input type="hidden" name="revision-id" value="' . $oldid . '">';
-            $out->addHTML($html);
+            if ($wikiPage = $out->getContext()->getWikiPage()) {
+                if ($revision = $wikiPage->getRevision()) {
+                    if ($oldid = $revision->getId()) {
+                        $html = '<input type="hidden" name="revision-id" value="' . $oldid . '">';
+                        $out->addHTML($html);
+                    }
+                }
+            }
         } catch (Exception $e) {
-            return false;
+
         }
 
         return true;
